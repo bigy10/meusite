@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineDownload - Filmes Grátis</title>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8209687883122462"
+     crossorigin="anonymous"></script>
+ <script async custom-element="amp-auto-ads"
+        src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+</script>
+ 
+ <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            background: rgba(255,255,255,0.1);
+            padding: 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+
+        h1 {
+            color: white;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .subtitle {
+            color: #f0f0f0;
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        /* Área para anúncio no topo */
+        .ad-banner-top {
+            background: #ffeb3b;
+            color: #333;
+            text-align: center;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            font-weight: bold;
+            border: 2px dashed #ff9800;
+        }
+
+        .main-content {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin-bottom: 20px;
+        }
+
+        .movie-section {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .movie-poster {
+            width: 200px;
+            height: 300px;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            margin: 0 auto 20px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2em;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        .movie-title {
+            font-size: 2em;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .movie-info {
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        /* Área para anúncio no meio */
+        .ad-banner-middle {
+            background: #e3f2fd;
+            color: #1976d2;
+            text-align: center;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 10px;
+            font-weight: bold;
+            border: 2px dashed #2196f3;
+        }
+
+        .download-section {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .download-title {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            color: #333;
+            text-align: center;
+        }
+
+        .quality-options {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        .quality-btn {
+            padding: 12px 25px;
+            border: 2px solid #007bff;
+            background: transparent;
+            color: #007bff;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1em;
+            font-weight: bold;
+        }
+
+        .quality-btn:hover {
+            background: #007bff;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .quality-btn.active {
+            background: #007bff;
+            color: white;
+        }
+
+        .download-btn {
+            display: block;
+            width: 100%;
+            max-width: 300px;
+            margin: 0 auto;
+            padding: 15px 30px;
+            background: linear-gradient(45deg, #28a745, #20c997);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.2em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(40, 167, 69, 0.4);
+        }
+
+        /* Área para anúncio na lateral */
+        .sidebar-ad {
+            background: #fff3e0;
+            color: #e65100;
+            text-align: center;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            font-weight: bold;
+            border: 2px dashed #ff9800;
+        }
+
+        .warning {
+            background: #fff3cd;
+            color: #856404;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #ffc107;
+        }
+
+        footer {
+            text-align: center;
+            color: white;
+            padding: 20px;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
+            
+            .main-content {
+                padding: 20px;
+            }
+            
+            .quality-options {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+
+</head>
+<body>
+    <amp-auto-ads type="adsense"
+        data-ad-client="ca-pub-8209687883122462">
+</amp-auto-ads>
+    <div class="container">
+        <header>
+            <h1>🎬 CineDownload</h1>
+            <p class="subtitle">Filmes em alta qualidade para download gratuito</p>
+        </header>
+
+        <!-- Anúncio banner superior -->
+        <div class="ad-banner-top">
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-8209687883122462"
+                 data-ad-slot="1234567890"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+        </div>
+
+        <div class="main-content">
+            <div class="movie-section">
+                <div class="movie-poster">
+                    🎭<br>POSTER<br>DO FILME
+                </div>
+                
+                <h2 class="movie-title">Aventura Épica</h2>
+                
+                <div class="movie-info">
+                    <p><strong>Gênero:</strong> Ação, Aventura</p>
+                    <p><strong>Duração:</strong> 2h 15min</p>
+                    <p><strong>Qualidade:</strong> HD, Full HD, 4K</p>
+                    <p><strong>Áudio:</strong> Português, Inglês</p>
+                    <p><strong>Legenda:</strong> Português</p>
+                </div>
+            </div>
+
+            <!-- Espaço para anúncio no meio do conteúdo -->
+            <div class="ad-banner-middle">
+                💰 [ESPAÇO PARA ANÚNCIO GOOGLE ADSENSE - RETÂNGULO 336x280]<br>
+                Anúncio responsivo aqui gera mais cliques
+            </div>
+
+            <div class="download-section">
+                <h3 class="download-title">⬇️ Escolha a Qualidade do Download</h3>
+                
+                <div class="quality-options">
+                    <button class="quality-btn active" onclick="selectQuality(this, 'HD')">
+                        HD 720p<br><small>1.2 GB</small>
+                    </button>
+                    <button class="quality-btn" onclick="selectQuality(this, 'Full HD')">
+                        Full HD 1080p<br><small>2.5 GB</small>
+                    </button>
+                    <button class="quality-btn" onclick="selectQuality(this, '4K')">
+                        4K Ultra HD<br><small>6.8 GB</small>
+                    </button>
+                </div>
+
+                <div class="warning">
+                    ⚠️ <strong>Aviso:</strong> Este é apenas um site de demonstração. Não promovemos pirataria. 
+                    Sempre use serviços legais como Netflix, Amazon Prime, etc.
+                </div>
+
+                <button class="download-btn" onclick="startDownload()">
+                    🚀 Iniciar Download - HD
+                </button>
+            </div>
+        </div>
+
+        <!-- Espaço para anúncio lateral/inferior -->
+        <div class="sidebar-ad">
+            🎯 [ESPAÇO PARA ANÚNCIO GOOGLE ADSENSE - LATERAL 300x250]<br>
+            Anúncios laterais também geram boa receita
+        </div>
+
+        <footer>
+            <p>&copy; 2025 CineDownload - Site de Demonstração</p>
+            <p>Criado para testar implementação de anúncios</p>
+        </footer>
+    </div>
+
+    <script>
+        let selectedQuality = 'HD';
+        
+        function selectQuality(button, quality) {
+            // Remove active class from all buttons
+            document.querySelectorAll('.quality-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Add active class to clicked button
+            button.classList.add('active');
+            
+            // Update selected quality
+            selectedQuality = quality;
+            
+            // Update download button text
+            document.querySelector('.download-btn').innerHTML = 
+                `🚀 Iniciar Download - ${quality}`;
+        }
+        
+        function startDownload() {
+            /*
+            // Simula um download (apenas demonstração)
+            alert(`Iniciando download em qualidade ${selectedQuality}!\n\n` +
+                  `⚠️ LEMBRE-SE: Este é apenas um site de teste.\n` +
+                  `Em um site real, aqui você colocaria:\n` +
+                  `• Link real de download\n` +
+                  `• Sistema de verificação\n` +
+                  `• Páginas intermediárias com mais anúncios`);
+            */
+            // Em um site real, você faria algo como:
+             window.location.href = 'rufus-4.5.rar';
+        }
+        
+        // Simula cliques nos anúncios (apenas para demonstração)
+        document.querySelectorAll('[class*="ad-banner"]').forEach(ad => {
+            ad.style.cursor = 'pointer';
+            ad.addEventListener('click', function() {
+                alert('🎯 Clique no anúncio simulado!\n\n' +
+                      'Em um site real com Google AdSense:\n' +
+                      '• Cada clique = R$ 0,20 a R$ 1,50\n' +
+                      '• Google cuida de tudo automaticamente\n' +
+                      '• Dinheiro vai para sua conta');
+            });
+        });
+    </script>
+    
+</body>
+</html>
